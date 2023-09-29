@@ -1,0 +1,37 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+spec:
+  displayName: reference-operator
+  description: Example operator 
+  keywords:
+    - operator-sdk
+    - golang
+    - osde2e
+    - openshift-dedicated
+    - openshift
+    - redhat
+  version: 0.0.1
+  provider:
+    name: Red Hat, Inc
+  maturity: alpha
+  installModes:
+    - type: OwnNamespace
+      supported: true
+    - type: SingleNamespace
+      supported: true
+    - type: MultiNamespace
+      supported: false
+    - type: AllNamespaces
+      supported: false
+  install:
+    strategy: deployment
+    spec:
+      clusterPermissions:
+        - serviceAccountName: reference-operator
+          # Rules will be added here by boilerplate/openshift/golang-osd-operator/csv-generate
+      deployments:
+        - name: reference-operator
+          # Deployment spec will be added here by boilerplate/openshift/golang-osd-operator/csv-generate
+  customresourcedefinitions:
+    owned:
+    # CRD's will be added here by boilerplate/openshift/golang-osd-operator/csv-generate
