@@ -4,8 +4,14 @@
 
 package osde2etests
 
-import "github.com/onsi/ginkgo/v2"
+import (
+	"github.com/onsi/ginkgo/v2"
+	"github.com/onsi/gomega"
+)
 
 var _ = ginkgo.Describe("reference-operator", func() {
-	//	 Add your tests
+	ginkgo.It("Makes seimple assertion", func() {
+		gomega.Expect(1).Should(gomega.Equal(1), "one should equal one")
+	})
+
 })
