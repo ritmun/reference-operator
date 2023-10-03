@@ -28,7 +28,7 @@ objects:
   spec:
     clusterDeploymentSelector:
       matchLabels:
-        api.openshift.com/managed: 'true'
+        osde2e: 'true'
     resourceApplyMode: Sync
     resources:
     - apiVersion: v1
